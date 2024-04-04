@@ -1,0 +1,12 @@
+.company_footer {
+    color: #3C4044;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.79px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    padding-bottom: 2%;
+}

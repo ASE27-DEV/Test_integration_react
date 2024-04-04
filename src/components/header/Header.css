@@ -1,0 +1,25 @@
+.header_box {
+    width: 100%;
+    /* background-image: url(../../assets/images/HeaderBackground2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; */
+    height: 500px;
+    overflow: hidden;
+}
+
+.icon {
+    display: none;
+}
+
+.header_background_layout::before {
+    content: "";
+    height: 500px;
+    position: absolute;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
