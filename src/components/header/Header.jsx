@@ -3,7 +3,7 @@ import './Header.css';
 import { Stack, Box, Typography, Container } from '@mui/material';
 import CompanyLogo from '../../assets/svg/CompanyLogo.svg';
 import IconBurgerMenu from '../../assets/svg/IconBurgerMenu.svg';
-import NavigationMenu from '../../assets/components/navigationMenu/NavigationMenu';
+import NavigationMenu from '../reusableComponent/navigationMenu/NavigationMenu';
 import RightArrow from '../../assets/svg/RightArrow.svg';
 import SeparationLine from '../../assets/svg/SeparationLine.svg';
 import HeaderBackground from '../../assets/images/HeaderBackground.png'

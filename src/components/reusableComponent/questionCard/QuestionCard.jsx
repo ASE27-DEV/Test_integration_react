@@ -3,7 +3,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { ReactComponent as FaqArrow } from '../../svg/FaqArrow.svg';
+import { ReactComponent as FaqArrow } from '../../../assets/svg/FaqArrow.svg';
 
 // Composant pour un seul item d'accordéon
 const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer }) => (

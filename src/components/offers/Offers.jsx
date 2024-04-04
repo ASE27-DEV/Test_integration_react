@@ -1,6 +1,6 @@
 import React from 'react';
 import './Offers.css';
-import OfferCard from '../../assets/components/offerCard/OfferCard'; // Importez le nouveau composant
+import OfferCard from '../reusableComponent/offerCard/OfferCard';
 import OfferImage1 from '../../assets/images/OfferImage1.png';
 import OfferImage2 from '../../assets/images/OfferImage2.png';
 import OfferImage3 from '../../assets/images/OfferImage3.png';

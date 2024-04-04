@@ -2,7 +2,7 @@ import React from 'react';
 import './Faq.css';
 import { Box, Grid, Button, Container } from '@mui/material';
 import SeparationLine from '../../assets/svg/SeparationLine.svg';
-import FaqAccordion from '../../assets/components/questionCard/QuestionCard';
+import FaqAccordion from '../reusableComponent/questionCard/QuestionCard';
 
 const faqQuestions = [
     { question: "Comment construire une maison ?", answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, repellat id autem facilis officia totam iusto, quia cumque voluptatibus quam voluptate nesciunt numquam voluptatem? Iusto  ipsa soluta maiores repellat totam harum corporis quis! Dolorem repudiandae, accusantium distinctio explicabo obcaecati amet? Dolorum ratione maxime fugiat quod laboriosam deserunt, minima ab esse quam, iusto ex et officia. " },

@@ -2,7 +2,7 @@ import React from 'react';
 import './Newsletter.css';
 import SeparationLine from '../../assets/svg/SeparationLine.svg';
 
-import { Box, Grid, Button, Container, Typography, Stack, TextField, InputBase } from '@mui/material';
+import { Box, Grid, Button, Typography, Stack, InputBase } from '@mui/material';
 
 const Newsletter = () => {
     return (
