@@ -4,8 +4,8 @@ import { Stack, Box, Typography, Container } from '@mui/material';
 import CompanyLogo from '../../assets/svg/CompanyLogo.svg';
 import IconBurgerMenu from '../../assets/svg/IconBurgerMenu.svg';
 import NavigationMenu from '../reusableComponent/navigationMenu/NavigationMenu';
-import RightArrow from '../../assets/svg/RightArrow.svg';
-import SeparationLine from '../../assets/svg/SeparationLine.svg';
+import RightArrow from '../../assets/svg/RightArrow';
+import SeparationLine from '../../assets/svg/SeparationLine';
 import HeaderBackground from '../../assets/images/HeaderBackground.png'
 
 
@@ -17,23 +17,34 @@ const Header = () => {
 
   return (
     <Box className="header_box" aria-label="">
+        <div class="header_background_layout">
+          <Box 
+            className="header_background_image"
+            component="img" 
+            src={HeaderBackground} 
+            alt="" 
+            sx={{}}
+          />       
+        </div>
       <Stack 
         justifyContent="space-between" 
         id="myTopnav"
+        className=""
         sx={{
           display:"flex",
-          flexDirection: {xs:'row-reverse', md:'row'}
+          flexDirection: {xs:'row-reverse', md:'row'},
+          marginTop:'-1%'
         }}
       >
         <Box 
           component="img" 
           src={CompanyLogo} 
           alt="Company Logo" 
-          sx={{ marginLeft: '5%', marginRight: {xs:'3%'}}}
+          sx={{ marginLeft: '9%', marginRight: {xs:'3%'}}}
         />
         <Box 
           sx={{ 
-            marginRight: '5%',
+            marginRight: '7%',
             width: '100%',
             display: {xs:'none', md:'block'},
           }}
@@ -50,36 +61,25 @@ const Header = () => {
         </Box>
       </Stack>
 
-      <Box sx={{ marginLeft: '5%' }}> 
-          <Typography variant="h3" className="">
+      <Box className="header_hero_container" sx={{ marginLeft: '9%', color:'white', maxWidth:'39%', height:'80%', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}> 
+
+          <Typography variant="" className="header_title">
             Votre maison éco-responsable et sur mesure
           </Typography>
-          <Box className="">
-            <Typography variant="body1" className="">
+
+          <Box className="header_content">
+            <Typography variant="" className="">
               Solum est une solution de construction éco-responsable à bas coût, sans compromis sur la qualité. Fondée sur un système de containers connectables et connectés, votre maison rapidement disponible, à tous les coûts.
             </Typography>
-            <Box sx={{ display:'flex', flexDirection:'row'}}>
-              <Box 
-                component="img" 
-                src={RightArrow} 
-                alt="" 
-                sx={{ width: '15px', color:'white'}}
-              />
-              <Typography variant="body1" className="">
+            <Box className='header_concept_link' sx={{ display:'flex', flexDirection:'row'}}>
+              <RightArrow size={15} color="#E7EFFE"/>
+              <Typography variant="" className="concept_section_link">
                 <a href="#concept_section">Le concept</a>
               </Typography>
             </Box>
+            <SeparationLine width = {599} color="#E7EFFE" opacity={0.2}/>       
           </Box>
-          <Box component="img" src={SeparationLine} alt="Company Logo" />        
       </Box>
-          <div class="header_background_layout">
-            <Box 
-                component="img" 
-                src={HeaderBackground} 
-                alt="" 
-                sx={{ width:'100%',  objectFit:'cover', position:'absolute', zIndex:'-2', top:'-19%', transform: 'scale(1)'}}
-              />       
-          </div>
     </Box>
   );
 };

@@ -11,7 +11,7 @@ const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer }) => 
     <AccordionSummary expandIcon={<FaqArrow />} aria-controls={`${panelId}d-content`} id={`${panelId}d-header`} sx={{backgroundColor:'#EAEDF0', marginBottom:'1%', maxWidth:'100%'}}>
       <Typography component="h3" variant="subtitle2">{question}</Typography>
     </AccordionSummary>
-    <AccordionDetails sx={{backgroundColor:'#F9FAFB', marginTop:'-1%',border: '1px solid red', maxWidth:'100%'}}>
+    <AccordionDetails sx={{backgroundColor:'#F9FAFB', marginTop:'-1%', maxWidth:'100%'}}>
       <Typography variant="body2" gutterBottom sx={{ maxWidth: { sm: '100%', md: '100%' } }}>
         {answer}
       </Typography>

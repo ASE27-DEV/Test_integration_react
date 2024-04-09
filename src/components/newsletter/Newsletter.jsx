@@ -17,7 +17,6 @@ const Newsletter = () => {
                         height: { xs: '475px', md: '675px' },
                         gap: 4,
                         minWidth: { xs: '100%', sm: '60%' },
-                        border: '2px solid red',
                     }}
                 >
                     <Box 

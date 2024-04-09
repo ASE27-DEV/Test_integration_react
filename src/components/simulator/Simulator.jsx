@@ -13,7 +13,7 @@ const Simulator = () => {
                     container
                     direction="row-reverse"
                     justifyContent="space-around"
-                    sx={{ border: '2px solid blue' }}
+                    sx={{}}
                 >
                     <Grid 
                         container 
@@ -21,7 +21,7 @@ const Simulator = () => {
                         sm={6}
                         item 
                         justifyContent="center" 
-                        sx={{ border: '1px solid red' }}
+                        sx={{}}
                     >
                         <img src={SimulatorImage} className="image" alt="" />
                     </Grid>
@@ -32,7 +32,7 @@ const Simulator = () => {
                         direction="column" 
                         justifyContent="center" 
                         alignItems="flex-start"
-                        sx={{ border: '1px solid grey' }}
+                        sx={{}}
 
                     >
                         <div>
@@ -49,7 +49,7 @@ const Simulator = () => {
 
 
                             <div >
-                                <Button class="information_button"> Accéder au simulateur </Button>
+                                <Button className="information_button"> Accéder au simulateur </Button>
                             </div>
                         </div>
                     </Grid>

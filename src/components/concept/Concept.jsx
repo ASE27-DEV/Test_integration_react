@@ -13,7 +13,7 @@ const Concept = () => {
                     container
                     direction="row"
                     justifyContent="center"
-                    sx={{ border: '1px dashed grey' }}
+                    sx={{}}
                 >
                     <Grid 
                         container 
@@ -21,7 +21,7 @@ const Concept = () => {
                         sm={6}
                         item 
                         justifyContent="center" 
-                        sx={{ border: '1px dashed grey' }}
+                        sx={{}}
                     >
                         <img src={ConceptImage} className="image" alt="" />
                     </Grid>
@@ -32,7 +32,7 @@ const Concept = () => {
                         direction="column" 
                         justifyContent="center" 
                         alignItems="flex-start"
-                        sx={{ border: '1px dashed grey' }}
+                        sx={{}}
 
                     >
                         <div class="title_box">

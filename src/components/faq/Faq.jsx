@@ -24,7 +24,7 @@ const Faq = () => {
                     container
                     direction="row"
                     justifyContent="flex-start"
-                    sx={{ border: '1px dashed grey', margin:'auto'}}
+                    sx={{ margin:'auto'}}
                 >
                     <Grid 
                         container
@@ -32,7 +32,7 @@ const Faq = () => {
                         direction="column" 
                         justifyContent="flex-start" 
                         alignItems="flex-start"
-                        sx={{ border: '1px solid green', maxWidth:'90%', position:{xs:'relative', md:'absolute'}}}
+                        sx={{ maxWidth:'90%', position:{xs:'relative', md:'absolute'}}}
 
                     >
                         <div>

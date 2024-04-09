@@ -17,7 +17,7 @@ const NavigationMenu = () => (
     alignItems="center"
   >
     {links.map((link, index) => (
-      <Grid sx={{ margin: '3%'}} key={index}>
+      <Grid sx={{ margin: '2%', marginLeft:'3%', color:'#FFFFFF'}} key={index}>
         <p><a href={link.href}>{link.text}</a></p>
       </Grid>
     ))}
