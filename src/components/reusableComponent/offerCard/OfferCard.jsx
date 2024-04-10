@@ -1,5 +1,5 @@
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
-import RightArrow from '../../../assets/svg/RightArrow.svg';
+import RightArrow from '../../../assets/svg/RightArrow';
 
 const OfferCard = ({ image, title, description }) => (
   <Card sx={{ maxWidth: 425, backgroundColor: 'grey.200' }}>
@@ -18,7 +18,7 @@ const OfferCard = ({ image, title, description }) => (
     </CardContent>
     <CardActions sx={{ justifyContent: 'flex-end' }}>
       <Button>
-        En savoir plus <img src={RightArrow} alt="" style={{ width: '10%' }} />
+        En savoir plus <RightArrow />
       </Button>
     </CardActions>
   </Card>

@@ -61,8 +61,18 @@ const Header = () => {
         </Box>
       </Stack>
 
-      <Box className="header_hero_container" sx={{ marginLeft: '9%', color:'white', maxWidth:'39%', height:'80%', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}> 
-
+      <Box className="header_hero_container" 
+        sx={{ 
+          marginLeft: '9%',
+          color:'white',
+          maxWidth:'39%',
+          height:'80%',
+          display:'flex',
+          flexDirection:'column',
+          justifyContent:'center',
+          alignItems:'center' 
+        }}
+      > 
           <Typography variant="" className="header_title">
             Votre maison éco-responsable et sur mesure
           </Typography>
@@ -71,7 +81,7 @@ const Header = () => {
             <Typography variant="" className="">
               Solum est une solution de construction éco-responsable à bas coût, sans compromis sur la qualité. Fondée sur un système de containers connectables et connectés, votre maison rapidement disponible, à tous les coûts.
             </Typography>
-            <Box className='header_concept_link' sx={{ display:'flex', flexDirection:'row'}}>
+            <Box className='header_concept_link' sx={{ display:'flex', flexDirection:'row', alignItems:'center'}}>
               <RightArrow size={15} color="#E7EFFE"/>
               <Typography variant="" className="concept_section_link">
                 <a href="#concept_section">Le concept</a>

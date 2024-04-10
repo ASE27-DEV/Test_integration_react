@@ -1,4 +1,24 @@
-.image {
-    width: 90%;
+.concept_section_container {
+    margin-top: 4%;
+}
+
+.concept_image {
+    max-width:95%;
+    overflow: hidden;
     border-radius: 40px;
+    margin-right: 10%;
+}
+
+.image {
+    width: 100%;
+    border-radius: 40px;
+    height: 600px;
+    transform: scale(1.1);
+    object-fit: cover;
+    margin-top: 4%;
+}
+
+
+.concept_text {
+    margin-top: 3%;
 }

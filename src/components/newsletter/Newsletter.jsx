@@ -1,6 +1,6 @@
 import React from 'react';
 import './Newsletter.css';
-import SeparationLine from '../../assets/svg/SeparationLine.svg';
+import SeparationLine from '../../assets/svg/SeparationLine';
 
 import { Box, Grid, Button, Typography, Stack, InputBase } from '@mui/material';
 
@@ -37,7 +37,7 @@ const Newsletter = () => {
                         <Typography variant="body2" fontWeight={600} gutterBottom>
                             Notre newsletter
                         </Typography>
-                        <img src={SeparationLine} width="80%" alt="" />
+                            <SeparationLine width={499}/>
                         <Typography variant="body2" color="text.secondary" mb={2}>
                             Pour suivre notre lancement et profiter des meilleurs tarifs pour votre future maison
                         </Typography>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from "react-slick";
 import './Offers.css';
 import OfferCard from '../reusableComponent/offerCard/OfferCard';
 import OfferImage1 from '../../assets/images/OfferImage1.png';

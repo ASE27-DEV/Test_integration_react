@@ -1,19 +1,19 @@
 import React from 'react';
 import './Concept.css';
 import ConceptImage from '../../assets/images/ConceptImage.png';
-import SeparationLine from '../../assets/svg/SeparationLine.svg';
+import SeparationLine from '../../assets/svg/SeparationLine';
 
-import { Box, Grid, Button } from '@mui/material';
+import { Box, Grid, Button, Typography } from '@mui/material';
 
 const Concept = () => {
     return (
         <>
-            <Box margin={1} spacing={0}>
+            <Box margin={1} spacing={0} >
                 <Grid
                     container
                     direction="row"
                     justifyContent="center"
-                    sx={{}}
+                    className='concept_section_container'
                 >
                     <Grid 
                         container 
@@ -21,36 +21,44 @@ const Concept = () => {
                         sm={6}
                         item 
                         justifyContent="center" 
-                        sx={{}}
-                    >
-                        <img src={ConceptImage} className="image" alt="" />
+                        sx={{ }}
+                    >   
+                        <div className='concept_image'>
+                            <img src={ConceptImage} className="image" alt="" />
+                        </div>
                     </Grid>
                     <Grid 
                         container
-                        xs 
                         item 
                         direction="column" 
                         justifyContent="center" 
                         alignItems="flex-start"
-                        sx={{}}
-
+                        sx={{ width:'31%'}}
                     >
-                        <div class="title_box">
-                            <h2 class="title_text">Le concept</h2>
+                        {/* WARNING Typo className are in style.css */}
+                        <div className=''>
+                            <Typography className="textSpeechMediumSize">
+                                Le concept
+                            </Typography>
                         </div>
 
-                        <div class="concept_separation_line">
-                            <img src={SeparationLine} width="80%" alt="" />
+                        <div className=''>
+                            <SeparationLine width={450}/>
                         </div>
 
-                        <div class="concept_box_textarea">
-                            <p class="box_text1">Trois gammes avec une myriade d'options pour construire la maison de vos rêves, éco-friendly et à un tarif abordable</p>
-                            <p class="box_text2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat assumenda sapiente repellendus ullam ipsam maiores.</p>
+                        <div className='concept_text'>
+                            <Typography className="textSpeechBigSize">
+                                Trois gammes avec une myriade d'options pour construire la maison de vos rêves, éco-friendly et à un tarif abordable
+                            </Typography>
+                        </div>
+                        <div className='concept_text'>
+                            <Typography className="textSpeechLowWeight">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat assumenda sapiente repellendus ullam ipsam maiores.
+                            </Typography>
+                        </div>
 
-
-                            <div class="concept_box_button">
-                                <Button class="information_button"> Plus d'informations </Button>
-                            </div>
+                        <div className=''>
+                            <Button className=''> Plus d'informations </Button>
                         </div>
                     </Grid>
 

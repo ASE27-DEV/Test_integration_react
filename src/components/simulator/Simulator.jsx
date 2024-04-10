@@ -1,7 +1,7 @@
 import React from 'react';
 import './Simulator.css';
 import SimulatorImage from '../../assets/images/SimulatorImage.png';
-import SeparationLine from '../../assets/svg/SeparationLine.svg';
+import SeparationLine from '../../assets/svg/SeparationLine';
 
 import { Box, Grid, Button, Container } from '@mui/material';
 
@@ -40,7 +40,7 @@ const Simulator = () => {
                         </div>
 
                         <div>
-                            <img src={SeparationLine} width="80%" alt="" />
+                            <SeparationLine width={450}/>
                         </div>
 
                         <div>

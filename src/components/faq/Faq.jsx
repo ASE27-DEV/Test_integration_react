@@ -1,7 +1,7 @@
 import React from 'react';
 import './Faq.css';
 import { Box, Grid, Button, Container } from '@mui/material';
-import SeparationLine from '../../assets/svg/SeparationLine.svg';
+import SeparationLine from '../../assets/svg/SeparationLine';
 import FaqAccordion from '../reusableComponent/questionCard/QuestionCard';
 
 const faqQuestions = [
@@ -40,7 +40,7 @@ const Faq = () => {
                         </div>
 
                         <div>
-                            <img src={SeparationLine} width="80%" alt="" />
+                            <SeparationLine width={450}/>
                         </div>
 
                         <div>
