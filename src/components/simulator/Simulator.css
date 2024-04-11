@@ -1,0 +1,17 @@
+.simulator_text {
+    margin-top: 3%;
+    max-width: 74%;
+}
+
+.simulator_information_button_div {
+    margin-top: 5%;
+}
+
+.simulator_information_button{
+    background-color: #3c4044;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 42px 10px 42px;
+}

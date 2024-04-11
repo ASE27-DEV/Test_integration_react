@@ -1,5 +1,8 @@
 .concept_section_container {
     margin-top: 4%;
+    flex-direction: row;
+    justify-content: center;
+
 }
 
 .concept_image {
@@ -13,12 +16,32 @@
     width: 100%;
     border-radius: 40px;
     height: 600px;
-    transform: scale(1.1);
+
     object-fit: cover;
     margin-top: 4%;
 }
 
-
 .concept_text {
     margin-top: 3%;
+}
+
+.concept_information_button_div {
+    margin-top: 9%;
+}
+
+.concept_information_button{
+    background-color: #3c4044;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 42px 10px 42px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .concept_section_container {
+        flex-direction: column-reverse!important;
+    }
+
 }

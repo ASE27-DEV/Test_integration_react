@@ -7,3 +7,22 @@
 .leftArrow {
     rotate: 180deg;
 }
+
+.offer_container {
+    margin-top: 7%;
+}
+
+.offer_content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    max-width: 100%;
+    height: 128px;
+}
+
+.text_box_container {
+    max-width: 40%;
+}

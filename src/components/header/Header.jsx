@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <Box className="header_box" aria-label="">
-        <div class="header_background_layout">
+        <div className="header_background_layout">
           <Box 
             className="header_background_image"
             component="img" 

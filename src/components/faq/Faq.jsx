@@ -1,6 +1,6 @@
 import React from 'react';
 import './Faq.css';
-import { Box, Grid, Button, Container } from '@mui/material';
+import { Box, Grid, Button, Container, Typography } from '@mui/material';
 import SeparationLine from '../../assets/svg/SeparationLine';
 import FaqAccordion from '../reusableComponent/questionCard/QuestionCard';
 
@@ -35,18 +35,23 @@ const Faq = () => {
                         sx={{ maxWidth:'90%', position:{xs:'relative', md:'absolute'}}}
 
                     >
-                        <div>
-                            <h2>Foire aux questions</h2>
+                        <div className='faq_title'>
+                            <Typography className="textSpeechMediumSize">
+                                Foire aux questions
+                            </Typography>
                         </div>
 
-                        <div>
+                        <div className=''>
                             <SeparationLine width={450}/>
                         </div>
 
-                        <div>
-                            <h2>Questions fréquentes</h2>
+                        <div className='faq_text'>
+                            <Typography className="textSpeechBigSize">
+                                Questions fréquentes
+                            </Typography>
                         </div>
                     </Grid>
+
                     <Grid 
                         container
                         item

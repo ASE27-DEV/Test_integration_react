@@ -3,7 +3,7 @@ import './Concept.css';
 import ConceptImage from '../../assets/images/ConceptImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
 
-import { Box, Grid, Button, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 const Concept = () => {
     return (
@@ -11,9 +11,8 @@ const Concept = () => {
             <Box margin={1} spacing={0} >
                 <Grid
                     container
-                    direction="row"
-                    justifyContent="center"
                     className='concept_section_container'
+                    sx={{}}
                 >
                     <Grid 
                         container 
@@ -57,8 +56,8 @@ const Concept = () => {
                             </Typography>
                         </div>
 
-                        <div className=''>
-                            <Button className=''> Plus d'informations </Button>
+                        <div className='concept_information_button_div'>
+                            <button className='concept_information_button'> Plus d'informations </button>
                         </div>
                     </Grid>
 
