@@ -19,7 +19,7 @@ const Faq = () => {
 
     return (
         <>
-            <Container margin={1} spacing={0} maxWidth="100%">
+            <Container className='faq_content_box'>
                 <Grid
                     container
                     direction="row"
@@ -42,7 +42,7 @@ const Faq = () => {
                         </div>
 
                         <div className=''>
-                            <SeparationLine width={450}/>
+                            <SeparationLine width={400}/>
                         </div>
 
                         <div className='faq_text'>
@@ -56,7 +56,7 @@ const Faq = () => {
                         container
                         item
                         direction="column" 
-                        justifyContent="flex-start" 
+
                         alignItems="flex-end"
                     >
                         <Box sx={{ maxWidth:{xs:'100%', lg:'60%'}}}>

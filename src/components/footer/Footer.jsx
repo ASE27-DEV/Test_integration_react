@@ -7,14 +7,14 @@ const Footer = () => {
     return (
         <>
             <Container maxWidth="100%">
-                <Typography>
-                    <div class="company_footer">
+                <div className="company_footer">
+                    <Typography className='textSpeechMediumSize'>
                         <span >Solum ©2023 - Kaliop</span>             
-                    </div>
-                </Typography>
+                    </Typography>
+                </div>
             </Container>
         </>
     )
-}
+};
 
 export default Footer;

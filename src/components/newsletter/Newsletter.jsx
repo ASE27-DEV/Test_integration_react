@@ -34,11 +34,11 @@ const Newsletter = () => {
                             boxShadow: '0px 5px 5px #F9FAFB',
                         }}
                     >
-                        <Typography variant="body2" fontWeight={600} gutterBottom>
+                        <Typography className='textSpeechMediumSize' sx={{marginTop:'4%'}}>
                             Notre newsletter
                         </Typography>
                             <SeparationLine width={499}/>
-                        <Typography variant="body2" color="text.secondary" mb={2}>
+                        <Typography className='textSpeechBigSize' sx={{maxWidth:'75%', textAlign:'center'}}>
                             Pour suivre notre lancement et profiter des meilleurs tarifs pour votre future maison
                         </Typography>
                         <Stack direction="row" spacing={1} useFlexGap
@@ -46,19 +46,20 @@ const Newsletter = () => {
                                 border:'1px solid #3C4044',
                                 borderRadius: '5px',
                                 padding: '5px',
+                                width:'70%',
+                                marginBottom:'4%' 
                             }}
                         >
-                            <InputBase
-                                hiddenLabel
+                            <InputBase                     
                                 fullWidth
                                 aria-label="Entrez votre adresse mail"
                                 placeholder="Votre email"
                                 inputProps={{
-                                    autocomplete: 'off',
-                                    ariaLabel: 'Entrez votre adresse mail',
+                                    autoComplete: 'off',
                                 }}
+                                
                             />
-                            <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+                            <Button variant="contained" className='textSpeechMediumSize' sx={{ flexShrink: 0, textTransform:'none', backgroundColor:'#3C4044', width:'170px', height:'43px'}}>
                                 Je m'inscris
                             </Button>
                         </Stack>

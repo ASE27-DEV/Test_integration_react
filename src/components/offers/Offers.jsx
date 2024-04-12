@@ -28,7 +28,7 @@ const offers = [
 
 const Offers = () => {
   return (
-    <Box container className='offer_container'>
+    <Box className='offer_container'>
 
       <Box className='offer_content_container'>
         <Typography className='textSpeechMediumSize'>
