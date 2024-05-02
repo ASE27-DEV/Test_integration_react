@@ -8,7 +8,7 @@ import { Box, Grid, Typography } from '@mui/material';
 const Concept = () => {
     return (
         <>
-            <Box margin={1} spacing={0} >
+            <Box margin={0} spacing={0} >
                 <Grid
                     container
                     className='concept_section_container'
@@ -17,48 +17,49 @@ const Concept = () => {
                     <Grid 
                         container 
                         xs={12}
-                        sm={6}
+                        lg={6}
                         item 
                         justifyContent="center" 
                         sx={{ }}
                     >   
-                        <div className='concept_image'>
+                        <Box className='concept_image'>
                             <img src={ConceptImage} className="image" alt="" />
-                        </div>
+                        </Box>
                     </Grid>
                     <Grid 
                         container
                         item 
+                        className='concept_text_container'
                         direction="column" 
                         justifyContent="center" 
                         alignItems="flex-start"
-                        sx={{ width:'31%'}}
+                        sx={{ width: {xs: '100%', lg: '31%'}, alignItems: {xs: 'center', lg: 'flex-start'}}}
                     >
                         {/* WARNING Typo className are in style.css */}
-                        <div className=''>
+                        <Box className=''>
                             <Typography className="textSpeechMediumSize">
                                 Le concept
                             </Typography>
-                        </div>
+                        </Box>
 
-                        <div className=''>
+                        <Box className=''>
                             <SeparationLine width={450}/>
-                        </div>
+                        </Box>
 
-                        <div className='concept_text'>
+                        <Box className='concept_text'>
                             <Typography className="textSpeechBigSize">
                                 Trois gammes avec une myriade d'options pour construire la maison de vos rêves, éco-friendly et à un tarif abordable
                             </Typography>
-                        </div>
-                        <div className='concept_text'>
+                        </Box>
+                        <Box className='concept_text'>
                             <Typography className="textSpeechLowWeight">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat assumenda sapiente repellendus ullam ipsam maiores.
                             </Typography>
-                        </div>
+                        </Box>
 
-                        <div className='concept_information_button_div'>
+                        <Box className='concept_information_button_div'>
                             <button className='concept_information_button'> Plus d'informations </button>
-                        </div>
+                        </Box>
                     </Grid>
 
                 </Grid>

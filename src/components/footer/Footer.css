@@ -11,3 +11,18 @@
     padding-bottom: 2%;
 }
 
+@media screen and (max-width: 1200px) {
+
+    .company_footer {
+        margin-top: 30%;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .company_footer {
+        margin-top: 40%;
+    }
+
+}

@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import Header from "./components/header/Header";
 import Concept from "./components/concept/Concept";
 import Offers from "./components/offers/Offers";
@@ -9,7 +10,7 @@ import Footer from './components/footer/Footer';
 
 const SolumWebSite = () => (
   <>
-    <div>
+    <Box sx={{maxWidth:'100%', overflow:'hidden'}}>
       <Header />
       <Concept />
       <Offers />
@@ -17,7 +18,7 @@ const SolumWebSite = () => (
       <Faq />
       <Newsletter />
       <Footer />
-    </div>
+    </Box>
   </>
 );
 

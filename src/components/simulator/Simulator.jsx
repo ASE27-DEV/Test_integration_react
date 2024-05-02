@@ -3,7 +3,7 @@ import './Simulator.css';
 import SimulatorImage from '../../assets/images/SimulatorImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
 
-import { Box, Grid, Button, Container, Typography } from '@mui/material';
+import { Box, Grid, Container, Typography } from '@mui/material';
 
 const Simulator = () => {
     return (
@@ -35,30 +35,30 @@ const Simulator = () => {
                         sx={{marginLeft:'5%'}}
 
                     >
-                        <div className=''>
+                        <Box className=''>
                             <Typography className="textSpeechMediumSize">
                                 Le Simulateur
                             </Typography>
-                        </div>
+                        </Box>
 
-                        <div>
+                        <Box>
                             <SeparationLine width={450}/>
-                        </div>
+                        </Box>
 
-                        <div className='simulator_text'>
+                        <Box className='simulator_text'>
                             <Typography className="textSpeechBigSize">
                             Pensé par nous, fait pour vous. Prêts à découvrir votre nouveau rêve ?
                             </Typography>
-                        </div>
-                        <div className='simulator_text'>
+                        </Box>
+                        <Box className='simulator_text'>
                             <Typography className="textSpeechLowWeight">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut nobis tempore adipisci laboriosam quidem dignissimos repellat totam repellendus nostrum.
                             </Typography>
-                        </div>
+                        </Box>
 
-                        <div className='simulator_information_button_div'>
+                        <Box className='simulator_information_button_div'>
                             <button className='simulator_information_button'> Accéder au simulateur </button>
-                        </div>
+                        </Box>
                     </Grid>
 
                 </Grid>

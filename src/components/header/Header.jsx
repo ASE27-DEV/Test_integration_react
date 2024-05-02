@@ -1,6 +1,6 @@
 import React from "react";
 import './Header.css';
-import { Stack, Box, Typography, Container } from '@mui/material';
+import { Stack, Box, Typography } from '@mui/material';
 import CompanyLogo from '../../assets/svg/CompanyLogo.svg';
 import IconBurgerMenu from '../../assets/svg/IconBurgerMenu.svg';
 import NavigationMenu from '../reusableComponent/navigationMenu/NavigationMenu';
@@ -40,7 +40,7 @@ const Header = () => {
           component="img" 
           src={CompanyLogo} 
           alt="Company Logo" 
-          sx={{ marginLeft: '9%', marginRight: {xs:'3%'}}}
+          sx={{ marginLeft: '9%', marginRight: {xs:'3%'}, width: {xs: '85px'}}}
         />
         <Box 
           sx={{ 
@@ -61,34 +61,26 @@ const Header = () => {
         </Box>
       </Stack>
 
-      <Box className="header_hero_container" 
-        sx={{ 
-          marginLeft: '9%',
-          color:'white',
-          maxWidth:'39%',
-          height:'80%',
-          display:'flex',
-          flexDirection:'column',
-          justifyContent:'center',
-          alignItems:'center' 
-        }}
-      > 
-          <Typography variant="" className="header_title">
+      <Box className="header_hero_container">
+        <Box className="header_title">
+          <Typography variant="" className="">
             Votre maison éco-responsable et sur mesure
           </Typography>
-
-          <Box className="header_content">
-            <Typography variant="" className="">
-              Solum est une solution de construction éco-responsable à bas coût, sans compromis sur la qualité. Fondée sur un système de containers connectables et connectés, votre maison rapidement disponible, à tous les coûts.
+        </Box>
+        <Box className="header_content">
+          <Typography variant="" className="">
+            Solum est une solution de construction éco-responsable à bas coût, sans compromis sur la qualité. Fondée sur un système de containers connectables et connectés, votre maison rapidement disponible, à tous les coûts.
+          </Typography>
+          <Box className="header_concept_link" sx={{ display:'flex', flexDirection:'row', alignItems:'center'}}>
+            <RightArrow size={15} color="#E7EFFE"/>
+            <Typography variant="" className="concept_section_link">
+              <a href="#concept_section">Le concept</a>
             </Typography>
-            <Box className='header_concept_link' sx={{ display:'flex', flexDirection:'row', alignItems:'center'}}>
-              <RightArrow size={15} color="#E7EFFE"/>
-              <Typography variant="" className="concept_section_link">
-                <a href="#concept_section">Le concept</a>
-              </Typography>
-            </Box>
-            <SeparationLine width = {599} color="#E7EFFE" opacity={0.2}/>       
           </Box>
+          <Box className="header_separationLine_box">
+            <SeparationLine width = {600} color="#E7EFFE" opacity={0.2}/>
+          </Box>    
+        </Box>
       </Box>
     </Box>
   );
