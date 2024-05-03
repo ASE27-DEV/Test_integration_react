@@ -34,11 +34,11 @@ const Newsletter = () => {
                             boxShadow: '0px 5px 5px #F9FAFB',
                         }}
                     >
-                        <Typography className='textSpeechMediumSize' sx={{marginTop:'4%'}}>
+                        <Typography className='destopTextMediumSize' sx={{marginTop:'4%'}}>
                             Notre newsletter
                         </Typography>
                             <SeparationLine width={499}/>
-                        <Typography className='textSpeechBigSize' sx={{maxWidth:'75%', textAlign:'center'}}>
+                        <Typography className='destopTextBigSize' sx={{maxWidth:'75%', textAlign:'center'}}>
                             Pour suivre notre lancement et profiter des meilleurs tarifs pour votre future maison
                         </Typography>
                         <Stack direction="row" spacing={1} useFlexGap
@@ -59,7 +59,7 @@ const Newsletter = () => {
                                 }}
                                 
                             />
-                            <Button variant="contained" className='textSpeechMediumSize' sx={{ flexShrink: 0, textTransform:'none', backgroundColor:'#3C4044', width:'170px', height:'43px'}}>
+                            <Button variant="contained" className='destopTextMediumSize' sx={{ flexShrink: 0, textTransform:'none', backgroundColor:'#3C4044', width:'170px', height:'43px'}}>
                                 Je m'inscris
                             </Button>
                         </Stack>

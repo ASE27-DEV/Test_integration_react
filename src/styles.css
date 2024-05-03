@@ -73,30 +73,51 @@ span a {
   text-decoration: none;
 }
 
-.textSpeechBigSize {
+.destopTextBigSize {
   color: #3C4044;
   font-size: 24px!important;
   font-weight: 700!important;
   line-height: 32.68px!important;
 }
 
-.textSpeechMediumPlusSize {
+.destopTextMediumPlusSize {
   color: #3C4044;
   font-size: 18px!important;
   font-weight: 700!important;
   line-height: 24.51px!important;
 }
 
-.textSpeechMediumSize {
+.destopTextMediumSize {
   color: #3C4044;
   font-size: 16px!important;
   font-weight: 600!important;
   line-height: 21.69px!important;
 }
 
-.textSpeechLowWeight {
+.destopTextLowWeight {
   color: #3C4044;
   font-size: 16px!important;
   font-weight: 400!important;
   line-height: 21.69px!important;
+}
+
+.mobileTextMediumSize {
+  color: #3C4044;
+  font-size: 14px!important;
+  font-weight: 600!important;
+  line-height: 19.07px!important;
+}
+
+.mobileTextBigSize {
+  color: #3C4044;
+  font-size: 16px!important;
+  font-weight: 700!important;
+  line-height: 21.79px!important;
+}
+
+.mobileTextLowWeight {
+  color: #3C4044;
+  font-size: 14px!important;
+  font-weight: 400!important;
+  line-height: 19.07px!important;
 }

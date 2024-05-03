@@ -36,7 +36,7 @@ const Faq = () => {
 
                     >
                         <div className='faq_title'>
-                            <Typography className="textSpeechMediumSize">
+                            <Typography className="destopTextMediumSize">
                                 Foire aux questions
                             </Typography>
                         </div>
@@ -46,7 +46,7 @@ const Faq = () => {
                         </div>
 
                         <div className='faq_text'>
-                            <Typography className="textSpeechBigSize">
+                            <Typography className="destopTextBigSize">
                                 Questions fréquentes
                             </Typography>
                         </div>

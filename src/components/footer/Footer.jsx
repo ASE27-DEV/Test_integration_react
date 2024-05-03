@@ -8,7 +8,7 @@ const Footer = () => {
         <>
             <Container maxWidth="100%">
                 <div className="company_footer">
-                    <Typography className='textSpeechMediumSize'>
+                    <Typography className='destopTextMediumSize'>
                         <span >Solum ©2023 - Kaliop</span>             
                     </Typography>
                 </div>

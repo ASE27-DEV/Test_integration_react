@@ -9,10 +9,10 @@ import { ReactComponent as FaqArrow } from '../../../assets/svg/FaqArrow.svg';
 const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer }) => (
   <Accordion expanded={expanded === panelId} onChange={onChange(panelId)} sx={{marginBottom:'2%'}}>
     <AccordionSummary expandIcon={<FaqArrow />} aria-controls={`${panelId}d-content`} id={`${panelId}d-header`} sx={{backgroundColor:'#EAEDF0', maxWidth:'100%', overflow:'hidden'}}>
-      <Typography className='textSpeechMediumSize'>{question}</Typography>
+      <Typography className='destopTextMediumSize'>{question}</Typography>
     </AccordionSummary>
     <AccordionDetails sx={{backgroundColor:'#F9FAFB', maxWidth:'100%'}}>
-      <Typography className='textSpeechLowWeight' sx={{ maxWidth: { sm: '100%', md: '100%' } }}>
+      <Typography className='destopTextLowWeight' sx={{ maxWidth: { sm: '100%', md: '100%' } }}>
         {answer}
       </Typography>
     </AccordionDetails>

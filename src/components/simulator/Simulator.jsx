@@ -6,24 +6,26 @@ import SeparationLine from '../../assets/svg/SeparationLine';
 import { Box, Grid, Container, Typography } from '@mui/material';
 
 const Simulator = () => {
+
+    const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+
     return (
         <>
-            <Container spacing={0} maxWidth="90%" sx={{marginTop:'2%', marginBottom:'5%'}}>
+            <Box margin={0} spacing={0} maxWidth="100%">
                 <Grid
                     container
-                    direction="row-reverse"
-                    justifyContent="space-around"
-                    sx={{maxWidth:'90%', margin:'auto'}}
+                    className='simulator_section_container'
                 >
                     <Grid 
                         container 
                         xs={12}
-                        sm={6}
+                        lg={6}
                         item 
-                        justifyContent="center" 
-                        sx={{}}
+                        justifyContent="center"
                     >
-                        <img src={SimulatorImage} className="image" alt="" />
+                        <Box className='simulator_image_box'>
+                            <img src={SimulatorImage} className="simulator_image" alt="" />
+                        </Box>
                     </Grid>
                     <Grid 
                         container
@@ -31,28 +33,27 @@ const Simulator = () => {
                         item 
                         direction="column" 
                         justifyContent="center" 
-                        alignItems="flex-start"
-                        sx={{marginLeft:'5%'}}
+                        sx={{alignItems: {xs: 'center', lg: 'flex-start'}, marginLeft: {xs: '0%', lg: '5%'}}}
 
                     >
                         <Box className=''>
-                            <Typography className="textSpeechMediumSize">
+                            <Typography className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}>
                                 Le Simulateur
                             </Typography>
                         </Box>
 
-                        <Box>
+                        <Box className='simulator_separationLine_box'>
                             <SeparationLine width={450}/>
                         </Box>
 
                         <Box className='simulator_text'>
-                            <Typography className="textSpeechBigSize">
-                            Pensé par nous, fait pour vous. Prêts à découvrir votre nouveau rêve ?
+                            <Typography className={isMobile ? 'mobileTextBigSize' : 'destopTextBigSize'}>
+                                Pensé par nous, fait pour vous. Prêts à découvrir votre nouveau rêve ?
                             </Typography>
                         </Box>
                         <Box className='simulator_text'>
-                            <Typography className="textSpeechLowWeight">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut nobis tempore adipisci laboriosam quidem dignissimos repellat totam repellendus nostrum.
+                            <Typography className={isMobile ? 'mobileTextLowWeight' : 'destopTextLowWeight'}>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut nobis tempore adipisci laboriosam quidem dignissimos repellat totam repellendus nostrum.
                             </Typography>
                         </Box>
 
@@ -62,7 +63,7 @@ const Simulator = () => {
                     </Grid>
 
                 </Grid>
-            </Container>
+            </Box>
         </>
     )
 };

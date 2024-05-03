@@ -1,3 +1,19 @@
+.simulator_section_container {
+    flex-direction: row-reverse!important;
+    justify-content: space-around;
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 10%;
+}
+
+.simulator_image {
+    width: 100%;
+    border-radius: 40px;
+    height: 600px;
+    object-fit: cover;
+    margin-top: 4%;
+}
+
 .simulator_text {
     margin-top: 3%;
     max-width: 74%;
@@ -14,4 +30,47 @@
     font-weight: 500;
     border-radius: 5px;
     padding: 10px 42px 10px 42px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .simulator_section_container {
+        flex-direction: column-reverse!important;
+        max-width: 100%;
+        margin-top: 15%;
+        margin-bottom: 5%;
+    }
+    
+    .simulator_image_box {
+        max-width:95%;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-right: 0%;
+    }
+
+    .simulator_image {
+        width: 100%;
+        border-radius: 20px;
+        height: 75%;
+        object-fit: cover;
+        margin-top: 8%;
+    } 
+
+    .simulator_separationLine_box {
+        max-width: 92%;
+        overflow: hidden;
+    }
+
+    .simulator_text {
+        max-width: 85%;
+        text-align: center;
+        margin-top: 5%;
+
+    }
+
+    .simulator_information_button{
+        margin-top: 1%;
+    }
+
+
 }

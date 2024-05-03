@@ -31,14 +31,14 @@ const Offers = () => {
     <Box className='offer_container'>
 
       <Box className='offer_content_container'>
-        <Typography className='textSpeechMediumSize'>
+        <Typography className='destopTextMediumSize'>
           Les offres
         </Typography>
 
         <SeparationLine width={699}/>
 
         <Box className='text_box_container'>
-          <Typography className='textSpeechBigSize'>
+          <Typography className='destopTextBigSize'>
             Trois gammes avec une myriade d'options pour construire la maison de vos rêves.
           </Typography>
         </Box>

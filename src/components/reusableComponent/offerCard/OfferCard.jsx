@@ -8,13 +8,13 @@ const OfferCard = ({ image, title, description }) => (
     </CardMedia>
     <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: -7, height:'120px' }}>
       <Box className='offerCard_title_box'>
-        <Typography className='textSpeechMediumPlusSize'>
+        <Typography className='destopTextMediumPlusSize'>
           {title}
         </Typography>
       </Box>
       {description.map((desc, index) => (
         <Box sx={{ marginTop:'5%', textAlign:'center'}}>
-          <Typography key={index} className='textSpeechLowWeight '>
+          <Typography key={index} className='destopTextLowWeight '>
             {desc}
           </Typography>
         </Box>
