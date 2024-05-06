@@ -1,15 +1,26 @@
 .faq_content_box {
-    max-width: 90%!important;
+    max-width: 90%;
+    margin: auto;
 }
-
-
-
 
 .faq_title {
     margin-bottom: 1%;
 }
 
-
 .faq_text {
     margin-top: 1.5%;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .faq_content_box {
+        max-width: 95%;
+
+    }
+
+    .faq_separationLine_box {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
 }

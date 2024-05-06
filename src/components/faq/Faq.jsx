@@ -15,16 +15,20 @@ const faqQuestions = [
 
 const Faq = () => {
 
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = React.useState(false); // Sert à afficher la réponse de la question
+    const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+
 
     return (
         <>
-            <Container className='faq_content_box'>
+            <Box className='faq_content_box'>
                 <Grid
                     container
                     direction="row"
-                    justifyContent="flex-start"
-                    sx={{ margin:'auto'}}
+                    sx={{ 
+                        margin:'auto',
+                        justifyContent: {xs:'center', md:'flex-start'}
+                    }}
                 >
                     <Grid 
                         container
@@ -32,21 +36,26 @@ const Faq = () => {
                         direction="column" 
                         justifyContent="flex-start" 
                         alignItems="flex-start"
-                        sx={{ maxWidth:'90%', position:{xs:'relative', md:'absolute'}}}
+                        sx={{ 
+                            maxWidth:{xs:'100%', md:'90%'},
+                            position:{xs:'relative', md:'absolute'}, 
+                            alignItems:{xs:'center', md:'flex-start'},
+                            marginBottom: '5%',
+                        }}
 
                     >
                         <div className='faq_title'>
-                            <Typography className="destopTextMediumSize">
+                            <Typography className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}>
                                 Foire aux questions
                             </Typography>
                         </div>
 
-                        <div className=''>
+                        <div className='faq_separationLine_box'>
                             <SeparationLine width={400}/>
                         </div>
 
                         <div className='faq_text'>
-                            <Typography className="destopTextBigSize">
+                            <Typography className={isMobile ? 'mobileTextBigSize' : 'destopTextBigSize'}>
                                 Questions fréquentes
                             </Typography>
                         </div>
@@ -64,7 +73,7 @@ const Faq = () => {
                         </Box>
                     </Grid>
                 </Grid>
-            </Container>
+            </Box>
         </>
     )
 };

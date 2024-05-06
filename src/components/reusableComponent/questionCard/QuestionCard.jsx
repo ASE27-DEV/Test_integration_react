@@ -2,17 +2,21 @@ import React from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import {Typography, Box} from '@mui/material';
 import { ReactComponent as FaqArrow } from '../../../assets/svg/FaqArrow.svg';
+
+const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
 
 // Composant pour un seul item d'accordéon
 const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer }) => (
-  <Accordion expanded={expanded === panelId} onChange={onChange(panelId)} sx={{marginBottom:'2%'}}>
-    <AccordionSummary expandIcon={<FaqArrow />} aria-controls={`${panelId}d-content`} id={`${panelId}d-header`} sx={{backgroundColor:'#EAEDF0', maxWidth:'100%', overflow:'hidden'}}>
-      <Typography className='destopTextMediumSize'>{question}</Typography>
+  <Accordion expanded={expanded === panelId} onChange={onChange(panelId)} sx={{marginBottom:{xs:'5%', md:'2%'}}}>
+    <AccordionSummary expandIcon={<FaqArrow />} aria-controls={`${panelId}d-content`} id={`${panelId}d-header`} sx={{backgroundColor:'#EAEDF0', maxWidth:'100%', overflow:'hidden', maxHeight:'42px'}}>
+      <Typography className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}>
+        {question}
+      </Typography>
     </AccordionSummary>
     <AccordionDetails sx={{backgroundColor:'#F9FAFB', maxWidth:'100%'}}>
-      <Typography className='destopTextLowWeight' sx={{ maxWidth: { sm: '100%', md: '100%' } }}>
+      <Typography className={isMobile ? 'mobileTextLowWeight' : 'destopTextLowWeight'}>
         {answer}
       </Typography>
     </AccordionDetails>
@@ -21,12 +25,13 @@ const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer }) => 
 
 // Composant principal qui utilise FaqAccordionItem pour chaque question
 const FaqAccordion = ({ questions, expanded, setExpanded }) => {
+
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
   return (
-    <div>
+    <Box>
       {questions.map((item, index) => (
         <FaqAccordionItem
           key={index}
@@ -37,7 +42,7 @@ const FaqAccordion = ({ questions, expanded, setExpanded }) => {
           answer={item.answer}
         />
       ))}
-    </div>
+    </Box>
   );
 };
 

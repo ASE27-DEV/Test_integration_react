@@ -11,8 +11,15 @@
 @media screen and (max-width: 900px) {
 
     .newsletterBackground {
-        height: 275px;
-        background-size: 115%;
+        height: 475px;
+        background-size: 200%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+
+    .newsletter_separationLine_box {
+        max-width: 90%;
+        overflow: hidden;
     }
 
 }
