@@ -58,6 +58,7 @@ const Newsletter = () => {
                         >
                             <InputBase                     
                                 fullWidth
+                                name='mailInput'
                                 aria-label="Entrez votre adresse mail"
                                 placeholder="Votre email"
                                 inputProps={{

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import './Offers.css';
 import OfferCard from '../reusableComponent/offerCard/OfferCard';
 import OfferImage1 from '../../assets/images/OfferImage1.png';
@@ -26,29 +27,117 @@ const offers = [
     },
 ];
 
+// Make movement on my offers view to the right
+
+function offerMovemenRight() {
+
+  const elements = document.querySelectorAll("#offer_option_box .offer_option"); // We select all the box that need to move
+  const maxMoveRight = -(window.innerWidth + 100); // Maximal limitation movement to the left depending on the screen size
+
+  // Calculate move value based on screen width
+  const moveValue = window.innerWidth < 600 ? 250 : 550;
+
+  elements.forEach(function (element) {
+    const currentTransform = getComputedStyle(element).transform;
+    const actualMove =
+      currentTransform === "none"
+        ? 0
+        : new WebKitCSSMatrix(currentTransform).m41;
+
+    // Potential move calculation
+    const newMove = actualMove - moveValue; // We subtract to go left
+
+    // Apply movement without exceeding the maximum to the left
+    if (newMove >= maxMoveRight) {
+      element.style.transform = `translateX(${newMove}px)`;
+    } else {
+      // If potential displacement exceeds limit, displacement is set to the maximum limit
+      element.style.transform = `translateX(${maxMoveRight}px)`;
+    }
+  });
+}
+
+
+// Make movement on my offers view to the left
+
+function offerMovemenLeft() {
+  const elements = document.querySelectorAll(".offer_option");
+  const maxMoveLeft = 0; // Maximal limitation movement to the right
+
+  // Calculate move value based on screen width
+  const moveValue = window.innerWidth < 600 ? 250 : 500;
+
+  elements.forEach(function (element) {
+    const currentTransform = getComputedStyle(element).transform;
+    const actualMove =
+      currentTransform === "none"
+        ? 0
+        : new WebKitCSSMatrix(currentTransform).m41;
+
+    // Potential move calculation
+    const newMove = actualMove + moveValue; // We add to go right
+
+    // Apply movement without exceeding the maximum to the right
+    if (newMove <= maxMoveLeft) {
+      element.style.transform = `translateX(${newMove}px)`;
+    } else {
+      // If potential displacement exceeds limit, displacement is set to the maximum limit
+      element.style.transform = `translateX(${maxMoveLeft}px)`;
+    }
+  });
+}
+
+  
+
+
 const Offers = () => {
+
+  const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+
   return (
     <Box className='offer_container'>
 
       <Box className='offer_content_container'>
-        <Typography className='destopTextMediumSize'>
+        <Typography className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}>
           Les offres
         </Typography>
-
-        <SeparationLine width={699}/>
-
+        <Box className='offer_separationLine_box'>
+          <SeparationLine width={450}/>
+        </Box>
         <Box className='text_box_container'>
-          <Typography className='destopTextBigSize'>
+          <Typography className={isMobile ? 'mobileTextBigSize' : 'destopTextBigSize'}>
             Trois gammes avec une myriade d'options pour construire la maison de vos rêves.
           </Typography>
         </Box>
       </Box>
 
-      <Grid container direction="column" justifyContent="center" alignItems='center' sx={{ overflow: 'hidden', marginTop:'2%', marginBottom:'5%' }}>
-        <Grid container item spacing={1} sx={{ justifyContent: 'space-around', width: '90%', margin: 'auto', maxWidth: '1440px', minWidth:'1405px' }}>
+      <Grid 
+        container 
+        direction="column" 
+        justifyContent="center" 
+        alignItems='center' 
+        sx={{ 
+          overflow: 'hidden', 
+          marginTop:'2%', 
+          marginBottom:'5%' 
+          }}
+      >
+        <Grid 
+          container 
+          id="offer_option_box"
+          item 
+          spacing={2} 
+          sx={{ 
+            justifyContent: { xs:'flex-start',md:'space-around'}, 
+            width: '90%', 
+            margin: 'auto', 
+            maxWidth: '1440px', 
+            minWidth:{ xs:'950px',md:'1405px'},
+            }}
+        >
           {offers.map((offer, index) => (
             <Grid item key={index}>
-              <OfferCard {...offer} />
+              <OfferCard {...offer}  class="offer_option" id="offer_option"/>
             </Grid>
           ))}
         </Grid>
@@ -61,11 +150,11 @@ const Offers = () => {
           className='arrowContainer'
           sx={{ display: { lg: 'none' }}}
       >
-          <Button>
-              <MyArrow className='leftArrow'/>
+          <Button id="left_navigation_arrow" onClick={offerMovemenLeft}>
+              <MyArrow className='leftArrow' />
           </Button>
-          <Button>
-              <MyArrow className='rightArrow'/>
+          <Button id="right_navigation_arrow" onClick={offerMovemenRight}>
+              <MyArrow className='rightArrow' />
           </Button>
       </Grid>
     </Box>

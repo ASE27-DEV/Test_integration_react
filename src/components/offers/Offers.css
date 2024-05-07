@@ -1,7 +1,7 @@
 .OfferImage {
     max-width: 100%;
     clip-path: polygon(0 20%, 100% 20%, 100% 72%, 0 79%);
-    margin-top: -15%;
+    margin-top: -13%;
 }
 
 .leftArrow {
@@ -25,4 +25,33 @@
 
 .text_box_container {
     max-width: 40%;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .OfferImage {
+        max-width: 100%;
+        clip-path: polygon(0 0%, 100% 0%, 100% 82%, 0 89%);
+        margin-top: -3%;
+    }
+
+    .offer_container {
+        margin-top: -5%;
+    }
+
+    .offer_separationLine_box {
+        max-width: 92%;
+        overflow: hidden;
+    }
+
+    .offer_content_container {
+        height: unset;
+        justify-content: unset;
+    }
+
+    .text_box_container {
+        max-width: 95%;
+        margin-top: 3%;
+    }
+
 }
