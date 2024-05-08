@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import './Offers.css';
 import OfferCard from '../reusableComponent/offerCard/OfferCard';
 import OfferImage1 from '../../assets/images/OfferImage1.png';
@@ -27,72 +26,21 @@ const offers = [
     },
 ];
 
-// Make movement on my offers view to the right
-
-function offerMovemenRight() {
-
-  const elements = document.querySelectorAll("#offer_option_box .offer_option"); // We select all the box that need to move
-  const maxMoveRight = -(window.innerWidth + 100); // Maximal limitation movement to the left depending on the screen size
-
-  // Calculate move value based on screen width
-  const moveValue = window.innerWidth < 600 ? 250 : 550;
-
-  elements.forEach(function (element) {
-    const currentTransform = getComputedStyle(element).transform;
-    const actualMove =
-      currentTransform === "none"
-        ? 0
-        : new WebKitCSSMatrix(currentTransform).m41;
-
-    // Potential move calculation
-    const newMove = actualMove - moveValue; // We subtract to go left
-
-    // Apply movement without exceeding the maximum to the left
-    if (newMove >= maxMoveRight) {
-      element.style.transform = `translateX(${newMove}px)`;
-    } else {
-      // If potential displacement exceeds limit, displacement is set to the maximum limit
-      element.style.transform = `translateX(${maxMoveRight}px)`;
-    }
-  });
-}
-
-
-// Make movement on my offers view to the left
-
-function offerMovemenLeft() {
-  const elements = document.querySelectorAll(".offer_option");
-  const maxMoveLeft = 0; // Maximal limitation movement to the right
-
-  // Calculate move value based on screen width
-  const moveValue = window.innerWidth < 600 ? 250 : 500;
-
-  elements.forEach(function (element) {
-    const currentTransform = getComputedStyle(element).transform;
-    const actualMove =
-      currentTransform === "none"
-        ? 0
-        : new WebKitCSSMatrix(currentTransform).m41;
-
-    // Potential move calculation
-    const newMove = actualMove + moveValue; // We add to go right
-
-    // Apply movement without exceeding the maximum to the right
-    if (newMove <= maxMoveLeft) {
-      element.style.transform = `translateX(${newMove}px)`;
-    } else {
-      // If potential displacement exceeds limit, displacement is set to the maximum limit
-      element.style.transform = `translateX(${maxMoveLeft}px)`;
-    }
-  });
-}
-
-  
-
-
 const Offers = () => {
 
+  const [offset, setOffset] = useState(0); // défini une position de départ pour "offer_option_box"
+
   const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+
+  const offerMovemenRight = () => {
+    if (offset <= -500) return; // Désactive le bouton si l'utilisateur arrive au bout de l'élement
+    setOffset(currentOffset => currentOffset - 250); // Déplace les cartes vers la droite
+  };
+
+  const offerMovemenLeft = () => {
+    if (offset >= 0) return; // Désactive le bouton si l'utilisateur revient au départ de l'élément
+    setOffset(currentOffset => currentOffset + 250); // Déplace les cartes vers la gauche
+  };
 
   return (
     <Box className='offer_container'>
@@ -133,11 +81,13 @@ const Offers = () => {
             margin: 'auto', 
             maxWidth: '1440px', 
             minWidth:{ xs:'950px',md:'1405px'},
+            transform: `translateX(${offset}px)`, // applique le décalage
+            transition: 'transform 0.3s ease-in-out' //animation douce
             }}
         >
           {offers.map((offer, index) => (
             <Grid item key={index}>
-              <OfferCard {...offer}  class="offer_option" id="offer_option"/>
+              <OfferCard {...offer}  class="offer_option" id={`offer_option_${index}`}/>
             </Grid>
           ))}
         </Grid>
