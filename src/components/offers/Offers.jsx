@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Offers.css';
 import OfferCard from '../reusableComponent/offerCard/OfferCard';
 import OfferImage1 from '../../assets/images/OfferImage1.png';
@@ -30,7 +30,21 @@ const Offers = () => {
 
   const [offset, setOffset] = useState(0); // défini une position de départ pour "offer_option_box"
 
-  const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+    // Ajouter l'écouteur d'événements
+    window.addEventListener('resize', handleResize);
+
+    // Nettoyer l'écouteur d'événements lors du démontage du composant
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Un tableau vide signifie que l'effet ne s'exécute qu'au montage et au démontage
 
   const offerMovemenRight = () => {
     if (offset <= -500) return; // Désactive le bouton si l'utilisateur arrive au bout de l'élement
@@ -95,10 +109,8 @@ const Offers = () => {
 
       <Grid 
           container
-          item
           justifyContent="center"
           className='arrowContainer'
-          sx={{ display: { lg: 'none' }}}
       >
           <Button id="left_navigation_arrow" onClick={offerMovemenLeft}>
               <MyArrow className='leftArrow' />
