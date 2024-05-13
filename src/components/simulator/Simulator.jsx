@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Simulator.css';
+import ScreenContext from '../reusableComponent/screenContext/screenContext';
 import SimulatorImage from '../../assets/images/SimulatorImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
 
-import { Box, Grid, Container, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 const Simulator = () => {
 
-    const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+    const {isMobile} = useContext(ScreenContext)
 
     return (
         <>

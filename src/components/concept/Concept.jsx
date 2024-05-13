@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Concept.css';
+import ScreenContext from '../reusableComponent/screenContext/screenContext';
 import ConceptImage from '../../assets/images/ConceptImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
 
@@ -7,7 +8,7 @@ import { Box, Grid, Typography } from '@mui/material';
 
 const Concept = () => {
 
-    const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+    const {isMobile} = useContext(ScreenContext)
 
     return (
         <>

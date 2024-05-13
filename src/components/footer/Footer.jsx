@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Footer.css';
+import ScreenContext from '../reusableComponent/screenContext/screenContext';
 import { Container, Typography, Box } from '@mui/material';
 
 
 const Footer = () => {
 
-    const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
+    const {isMobile} = useContext(ScreenContext)
 
     return (
         <>

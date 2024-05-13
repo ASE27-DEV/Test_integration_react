@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { ScreenProvider } from './components/reusableComponent/screenContext/screenContext';
 import Header from "./components/header/Header";
 import Concept from "./components/concept/Concept";
 import Offers from "./components/offers/Offers";
@@ -11,13 +12,15 @@ import Footer from './components/footer/Footer';
 const SolumWebSite = () => (
   <>
     <Box sx={{maxWidth:'100%', overflow:'hidden'}}>
-      <Header />
-      <Concept />
-      <Offers />
-      <Simulator />
-      <Faq />
-      <Newsletter />
-      <Footer />
+      <ScreenProvider>
+        <Header />
+        <Concept />
+        <Offers />
+        <Simulator />
+        <Faq />
+        <Newsletter />
+        <Footer />
+      </ScreenProvider>
     </Box>
   </>
 );
