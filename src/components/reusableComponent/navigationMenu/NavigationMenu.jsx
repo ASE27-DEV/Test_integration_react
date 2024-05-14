@@ -9,15 +9,16 @@ const links = [
   { href: '#newsletter_section', text: 'Inscription' },
 ];
 
-const NavigationMenu = () => (
+const NavigationMenu = ({ direction, justifyContent, alignItems, height, color }) => (
   <Grid
     container
-    direction="row"
-    justifyContent="flex-end"
-    alignItems="center"
+    direction={direction}
+    justifyContent={justifyContent}
+    alignItems={alignItems}
+    height={height}
   >
     {links.map((link, index) => (
-      <Grid sx={{ margin: '2%', marginLeft:'3%', color:'#FFFFFF'}} key={index}>
+      <Grid sx={{ margin: '2%', marginLeft:'3%', color:{color}}} key={index}>
         <p><a href={link.href}>{link.text}</a></p>
       </Grid>
     ))}

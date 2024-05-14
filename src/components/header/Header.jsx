@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext, useState } from 'react';
 import './Header.css';
+import ScreenContext from '../reusableComponent/screenContext/screenContext';
 import { Stack, Box, Typography } from '@mui/material';
+import CloseBurgerMenuIcon from '../../assets/svg/CloseBurgerMenuIcon.svg'
 import CompanyLogo from '../../assets/svg/CompanyLogo.svg';
 import IconBurgerMenu from '../../assets/svg/IconBurgerMenu.svg';
 import NavigationMenu from '../reusableComponent/navigationMenu/NavigationMenu';
@@ -10,22 +12,25 @@ import HeaderBackground from '../../assets/images/HeaderBackground.png'
 
 
 const Header = () => {
+
+  const {isMobile} = useContext(ScreenContext)
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour la visibilité du menu
+
   // Fonction de gestion du clic pour le menu burger
   const toggleNavbar = () => {
-    // Logique de switch du menu 
+    setIsMenuOpen(!isMenuOpen); // bascule l'état de visibilité du menu
   };
 
   return (
     <Box className="header_box" aria-label="">
-        <div className="header_background_layout">
+        <Box className="header_background_layout">
           <Box 
             className="header_background_image"
             component="img" 
             src={HeaderBackground} 
             alt="" 
-            sx={{}}
           />       
-        </div>
+        </Box>
       <Stack 
         justifyContent="space-between" 
         id="myTopnav"
@@ -44,12 +49,18 @@ const Header = () => {
         />
         <Box 
           sx={{ 
-            marginRight: '7%',
+            marginRight: '10%',
             width: '100%',
             display: {xs:'none', md:'block'},
           }}
         >
-          <NavigationMenu />
+          <NavigationMenu direction={'row'} justifyContent={'flex-end'} alignItems={'center'} color={'#e7effe'}/>
+        </Box>
+        <Box className='mobileBurgerMenu' sx={{ display: isMenuOpen ? 'block' : 'none'}}>
+          <Box className='mobileBurgerMenuOverlay'>
+            <Box component="img" src={CloseBurgerMenuIcon} alt="Menu" className='CloseBurgerMenuIcon' onClick={toggleNavbar}></Box>
+            <NavigationMenu direction={'column'} justifyContent={'center'} alignItems={'center'} color={'black'} height={'50%'}/>
+          </Box>
         </Box>
         <Box 
           sx={{
@@ -63,19 +74,21 @@ const Header = () => {
 
       <Box className="header_hero_container">
         <Box className="header_title">
-          <Typography variant="" className="">
+          <Typography variant="" className={isMobile ? 'mobileHeaderBigSize' : 'destopHeaderBigSize'}>
             Votre maison éco-responsable et sur mesure
           </Typography>
         </Box>
         <Box className="header_content">
-          <Typography variant="" className="">
+          <Typography variant="" className={isMobile ? 'mobileHeaderTextLowWeight' : 'destopHeaderTextLowWeight'}>
             Solum est une solution de construction éco-responsable à bas coût, sans compromis sur la qualité. Fondée sur un système de containers connectables et connectés, votre maison rapidement disponible, à tous les coûts.
           </Typography>
-          <Box className="header_concept_link" sx={{ display:'flex', flexDirection:'row', alignItems:'center'}}>
+          <Box className="header_concept_link">
             <RightArrow size={15} color="#E7EFFE"/>
-            <Typography variant="" className="concept_section_link">
-              <a href="#concept_section">Le concept</a>
-            </Typography>
+            <Box className="concept_section_link">
+              <Typography variant="" className={isMobile ? 'mobileHeaderTextLowWeight' : 'destopHeaderTextLowWeight'}>
+                <a href="#concept_section">Le concept</a>
+              </Typography>
+            </Box>
           </Box>
           <Box className="header_separationLine_box">
             <SeparationLine width = {600} color="#E7EFFE" opacity={0.2}/>

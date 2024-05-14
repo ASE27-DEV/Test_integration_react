@@ -73,6 +73,34 @@ span a {
   text-decoration: none;
 }
 
+.destopHeaderBigSize {
+  color: #e7effe;
+  font-size: 34px!important;
+  font-weight: 700!important;
+  line-height: 46.3px!important;
+}
+
+.mobileHeaderBigSize {
+  color: #e7effe;
+  font-size: 24px!important;
+  font-weight: 700!important;
+  line-height: 32.68px!important;
+}
+
+.destopHeaderTextLowWeight {
+  color: #e7effe;
+  font-size: 16px!important;
+  font-weight: 400!important;
+  line-height: 21.69px!important;
+}
+
+.mobileHeaderTextLowWeight {
+  color: #e7effe;
+  font-size: 14px!important;
+  font-weight: 400!important;
+  line-height: 19.07px!important;
+}
+
 .destopTextBigSize {
   color: #3C4044;
   font-size: 24px!important;
