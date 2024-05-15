@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-// Création du contexte
+// Context Creation
 const ScreenContext = createContext({
   isMobile: false,
   setIsMobile: () => {}

@@ -1,10 +1,15 @@
+import React, { useContext } from 'react';
+import ScreenContext from '../../reusableComponent/screenContext/screenContext';
 import { Box, Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
 import RightArrow from '../../../assets/svg/RightArrow';
-const isMobile = window.innerWidth <= 900; // Détecte si l'appareil est mobile
 
 
-const OfferCard = ({ image, title, description }) => (
-  <Card sx={{ width:{xs:'250px', md:'375px'}, height: 330, backgroundColor: 'grey.200' }}>
+const OfferCard = ({ image, title, description }) => {
+
+  const {isMobile} = useContext(ScreenContext);
+
+  return (
+  <Card sx={{ width:{xs:'250px', lg:'375px'}, height: 330, backgroundColor: 'grey.200' }}>
     <CardMedia >
       {image}
     </CardMedia>
@@ -22,7 +27,7 @@ const OfferCard = ({ image, title, description }) => (
         </Box>
       ))}
     </CardContent>
-    <CardActions sx={{ justifyContent: 'flex-end'}}>
+    <CardActions sx={{ justifyContent: 'flex-end', marginTop:{xs:'7%', md:'15%',lg:'0%'}}}>
       <Box sx={{display:'flex', alignItems:'center'}}>
         <Button sx={{ textTransform:'none', color:'#3C4044', fontSize:{ xs:'14px',md:'16px'}, fontWeight:'600' }}>
           <Typography >
@@ -33,6 +38,7 @@ const OfferCard = ({ image, title, description }) => (
       </Box>
     </CardActions>
   </Card>
-);
+  );
+};
 
 export default OfferCard;

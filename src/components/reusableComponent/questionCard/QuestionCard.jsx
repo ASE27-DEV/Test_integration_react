@@ -8,7 +8,7 @@ import {Typography, Box} from '@mui/material';
 import { ReactComponent as FaqArrow } from '../../../assets/svg/FaqArrow.svg';
 
 
-// Composant pour un seul item d'accordéon
+// Component for a single accordion item
 const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer, isMobile }) => (
   <Accordion expanded={expanded === panelId} onChange={onChange(panelId)} sx={{marginBottom:{xs:'5%', md:'2%'}}}>
     <AccordionSummary expandIcon={<FaqArrow />} aria-controls={`${panelId}d-content`} id={`${panelId}d-header`} sx={{backgroundColor:'#EAEDF0', maxWidth:'100%', overflow:'hidden', maxHeight:'42px'}}>
@@ -24,7 +24,7 @@ const FaqAccordionItem = ({ expanded, onChange, panelId, question, answer, isMob
   </Accordion>
 );
 
-// Composant principal qui utilise FaqAccordionItem pour chaque question
+// Main component that uses FaqAccordionItem for each question
 const FaqAccordion = ({ questions, expanded, setExpanded }) => {
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -32,7 +32,6 @@ const FaqAccordion = ({ questions, expanded, setExpanded }) => {
   };
 
   const {isMobile} = useContext(ScreenContext)
-
 
   return (
     <Box>

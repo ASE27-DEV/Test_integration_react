@@ -19,7 +19,6 @@ const Newsletter = () => {
                         justifyContent: 'flex-end',
                         alignItems: 'center',
                         height: { xs: '475px', md: '675px' },
-                        gap: 4,
                         minWidth: { xs: '100%', sm: '60%' },
                     }}
                 >
@@ -67,15 +66,15 @@ const Newsletter = () => {
                                 }}                               
                             />
                             <Button 
-                            variant="contained"
-                            className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}
-                            sx={{ 
-                                flexShrink: 0,
-                                textTransform:'none',
-                                backgroundColor:'#3C4044',
-                                width:{ xs:'100%' ,md:'170px'},
-                                height:'43px'
-                                }}
+                                variant="contained"
+                                className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}
+                                sx={{ 
+                                    flexShrink: 0,
+                                    textTransform:'none',
+                                    backgroundColor:'#3C4044',
+                                    width:{ xs:'100%' ,md:'170px'},
+                                    height:'43px'
+                                    }}
                             >
                                 Je m'inscris
                             </Button>

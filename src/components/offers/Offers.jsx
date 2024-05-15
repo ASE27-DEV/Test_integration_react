@@ -29,24 +29,25 @@ const offers = [
 
 const Offers = () => {
 
-  const [offset, setOffset] = useState(0); // défini une position de départ pour "offer_option_box"
+  const [offset, setOffset] = useState(0); // defined a starting position for "offer_option_box"
 
-  const {isMobile} = useContext(ScreenContext)
+  const {isMobile} = useContext(ScreenContext);
 
   const offerMovemenRight = () => {
-    if (offset <= -500) return; // Désactive le bouton si l'utilisateur arrive au bout de l'élement
-    setOffset(currentOffset => currentOffset - 250); // Déplace les cartes vers la droite
+    const shouldStop = (offset <= -500) || (window.innerWidth >= 570 && offset <= -250); // All conditions to shut off button depends on screen size
+    if (shouldStop) return; // If conditions are reach shut off button
+    setOffset(currentOffset => currentOffset - 250); // Moves the cards to the right
   };
 
   const offerMovemenLeft = () => {
-    if (offset >= 0) return; // Désactive le bouton si l'utilisateur revient au départ de l'élément
-    setOffset(currentOffset => currentOffset + 250); // Déplace les cartes vers la gauche
+    if (offset >= 0) return; // Shut off button if the user returns to the start of the item
+    setOffset(currentOffset => currentOffset + 250); // Moves the cards to the left
   };
 
   return (
     <>
         <Box className='offer_container'>
-
+          {/* WARNING Typo className are in style.css */}
           <Box className='offer_content_container'>
             <Typography className={isMobile ? 'mobileTextMediumSize' : 'destopTextMediumSize'}>
               Les offres
@@ -82,9 +83,9 @@ const Offers = () => {
                 width: '90%', 
                 margin: 'auto', 
                 maxWidth: '1440px', 
-                minWidth:{ xs:'950px',md:'1405px'},
-                transform: `translateX(${offset}px)`, // applique le décalage
-                transition: 'transform 0.3s ease-in-out' //animation douce
+                minWidth:{ xs:'950px', md:'1050',lg:'1175px'},
+                transform: `translateX(${offset}px)`, // applies the offset
+                transition: 'transform 0.3s ease-in-out' //soft animation
                 }}
             >
               {offers.map((offer, index) => (

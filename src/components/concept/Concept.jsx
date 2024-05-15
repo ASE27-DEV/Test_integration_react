@@ -25,7 +25,11 @@ const Concept = () => {
                         justifyContent="center" 
                     >   
                         <Box className='concept_image'>
-                            <img src={ConceptImage} className="image" alt="" />
+                            <Box 
+                                component="img" 
+                                src={ConceptImage} 
+                                className="image" alt="Vue en coupe d'une élégante maquette de maison sur plusieurs niveaux, présentée sur un arrière-plan stylisé avec des plans architecturaux."
+                            />
                         </Box>
                     </Grid>
                     <Grid 

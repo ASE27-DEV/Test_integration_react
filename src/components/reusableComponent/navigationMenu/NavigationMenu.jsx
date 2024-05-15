@@ -9,7 +9,7 @@ const links = [
   { href: '#newsletter_section', text: 'Inscription' },
 ];
 
-const NavigationMenu = ({ direction, justifyContent, alignItems, height, color }) => (
+const NavigationMenu = ({ direction, justifyContent, alignItems, height='100%', color }) => (
   <Grid
     container
     direction={direction}

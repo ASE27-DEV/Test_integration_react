@@ -3,7 +3,6 @@ import './Simulator.css';
 import ScreenContext from '../reusableComponent/screenContext/screenContext';
 import SimulatorImage from '../../assets/images/SimulatorImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
-
 import { Box, Grid, Typography } from '@mui/material';
 
 const Simulator = () => {
@@ -25,7 +24,7 @@ const Simulator = () => {
                         justifyContent="center"
                     >
                         <Box className='simulator_image_box'>
-                            <img src={SimulatorImage} className="simulator_image" alt="" />
+                            <Box component="img" src={SimulatorImage} className="simulator_image" alt="" />
                         </Box>
                     </Grid>
                     <Grid 
