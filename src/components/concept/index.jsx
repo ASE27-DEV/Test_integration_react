@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './Concept.css';
-import ScreenContext from '../reusableComponent/screenContext/screenContext';
+import ScreenContext from '../reusableComponent/screenContext';
 import ConceptImage from '../../assets/images/ConceptImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
 
@@ -8,7 +8,7 @@ import { Box, Grid, Typography } from '@mui/material';
 
 const Concept = () => {
 
-    const {isMobile} = useContext(ScreenContext)
+    const { isMobile } = useContext(ScreenContext)
 
     return (
         <>
@@ -17,27 +17,30 @@ const Concept = () => {
                     container
                     className='concept_section_container'
                 >
-                    <Grid 
-                        container 
+                    <Grid
+                        container
                         xs={12}
                         lg={6}
-                        item 
-                        justifyContent="center" 
-                    >   
+                        item
+                        justifyContent="center"
+                    >
                         <Box className='concept_image'>
-                            <Box 
-                                component="img" 
-                                src={ConceptImage} 
+                            <Box
+                                component="img"
+                                src={ConceptImage}
                                 className="image" alt="Vue en coupe d'une élégante maquette de maison sur plusieurs niveaux, présentée sur un arrière-plan stylisé avec des plans architecturaux."
                             />
                         </Box>
                     </Grid>
-                    <Grid 
+                    <Grid
                         container
-                        item 
-                        direction="column" 
-                        justifyContent="center" 
-                        sx={{ width: {xs: '100%', lg: '31%'}, alignItems: {xs: 'center', lg: 'flex-start'}}}
+                        item
+                        direction="column"
+                        justifyContent="center"
+                        sx={{
+                            width: { xs: '100%', lg: '31%' },
+                            alignItems: { xs: 'center', lg: 'flex-start' }
+                        }}
                     >
                         {/* WARNING Typo className are in style.css */}
                         <Box className=''>
@@ -47,7 +50,7 @@ const Concept = () => {
                         </Box>
 
                         <Box className='concept_separationLine_box'>
-                            <SeparationLine width={450}/>
+                            <SeparationLine width={450} />
                         </Box>
 
                         <Box className='concept_text'>

@@ -3,9 +3,10 @@ import React, { createContext, useState, useEffect } from 'react';
 // Context Creation
 const ScreenContext = createContext({
   isMobile: false,
-  setIsMobile: () => {}
+  setIsMobile: () => { }
 });
 
+// Update the value if screen resize and give the value to all other component
 export const ScreenProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 

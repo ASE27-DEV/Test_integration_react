@@ -86,7 +86,6 @@
 
 .separation_line {
     max-width: 107%;
-    
 }
 
 @media screen and (max-width: 1450px) {
@@ -97,8 +96,7 @@
 
     .header_background_image {
         top: -140px;
-        height: 620px;
-        
+        height: 620px;       
     }
 
     .header_background_layout::before {
@@ -116,7 +114,6 @@
     .header_background_layout::before {
         height: 400px;
         background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-
     }
 
     .header_background_image {

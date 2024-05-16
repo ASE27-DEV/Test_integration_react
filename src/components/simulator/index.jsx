@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import './Simulator.css';
-import ScreenContext from '../reusableComponent/screenContext/screenContext';
+import ScreenContext from '../reusableComponent/screenContext';
+import { Box, Grid, Typography } from '@mui/material';
 import SimulatorImage from '../../assets/images/SimulatorImage.png';
 import SeparationLine from '../../assets/svg/SeparationLine';
-import { Box, Grid, Typography } from '@mui/material';
 
 const Simulator = () => {
 
-    const {isMobile} = useContext(ScreenContext)
+    const { isMobile } = useContext(ScreenContext)
 
     return (
         <>
@@ -16,24 +16,32 @@ const Simulator = () => {
                     container
                     className='simulator_section_container'
                 >
-                    <Grid 
-                        container 
+                    <Grid
+                        container
                         xs={12}
                         lg={6}
-                        item 
+                        item
                         justifyContent="center"
                     >
                         <Box className='simulator_image_box'>
-                            <Box component="img" src={SimulatorImage} className="simulator_image" alt="" />
+                            <Box
+                                component="img"
+                                src={SimulatorImage}
+                                className="simulator_image"
+                                alt="Un bureau moderne en suspension avec toit végétalisé sur fond de paysage montagneux et ciel nuageux."
+                            />
                         </Box>
                     </Grid>
-                    <Grid 
+                    <Grid
                         container
-                        xs 
-                        item 
-                        direction="column" 
-                        justifyContent="center" 
-                        sx={{alignItems: {xs: 'center', lg: 'flex-start'}, marginLeft: {xs: '0%', lg: '5%'}}}
+                        xs
+                        item
+                        direction="column"
+                        justifyContent="center"
+                        sx={{
+                            alignItems: { xs: 'center', lg: 'flex-start' },
+                            marginLeft: { xs: '0%', lg: '5%' }
+                        }}
 
                     >
                         <Box className=''>
@@ -43,7 +51,7 @@ const Simulator = () => {
                         </Box>
 
                         <Box className='simulator_separationLine_box'>
-                            <SeparationLine width={450}/>
+                            <SeparationLine width={450} />
                         </Box>
 
                         <Box className='simulator_text'>

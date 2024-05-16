@@ -1,13 +1,12 @@
 import { Box } from '@mui/material';
-import { ScreenProvider } from './components/reusableComponent/screenContext/screenContext';
-import Header from "./components/header/Header";
-import Concept from "./components/concept/Concept";
-import Offers from "./components/offers/Offers";
-import Simulator from "./components/simulator/Simulator"
-import Faq from './components/faq/Faq'
-import Newsletter from "./components/newsletter/Newsletter";
-import Footer from './components/footer/Footer';
-
+import { ScreenProvider } from './components/reusableComponent/screenContext';
+import Header from "./components/header";
+import Concept from "./components/concept";
+import Offers from "./components/offers";
+import Simulator from "./components/simulator"
+import Faq from './components/faq'
+import Newsletter from "./components/newsletter";
+import Footer from './components/footer';
 
 const SolumWebSite = () => (
   <>
