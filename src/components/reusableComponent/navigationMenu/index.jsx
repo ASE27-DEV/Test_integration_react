@@ -1,15 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-const links = [
-  { href: '#concept_section', text: 'Le concept' },
-  { href: '#offer_section', text: 'Les offres' },
-  { href: '#simulator_section', text: 'Le simulateur' },
-  { href: '#faq_section', text: 'FAQ' },
-  { href: '#newsletter_section', text: 'Inscription' },
-];
-
-const NavigationMenu = ({ direction, justifyContent, alignItems, height='100%', color }) => (
+const NavigationMenu = ({links, direction, justifyContent, alignItems, height='100%', color }) => (
   <Grid
     container
     direction={direction}

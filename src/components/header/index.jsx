@@ -10,12 +10,20 @@ import RightArrow from '../../assets/svg/RightArrow';
 import SeparationLine from '../../assets/svg/SeparationLine';
 import HeaderBackground from '../../assets/images/HeaderBackground.png'
 
+// All my links for my navbar
+const links = [
+  { href: '#concept_section', text: 'Le concept' },
+  { href: '#offer_section', text: 'Les offres' },
+  { href: '#simulator_section', text: 'Le simulateur' },
+  { href: '#faq_section', text: 'FAQ' },
+  { href: '#newsletter_section', text: 'Inscription' },
+];
+
 const Header = () => {
 
   const { isMobile } = useContext(ScreenContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Status for menu visibility
 
-  // Click management function for the burger menu
   const toggleNavbar = () => {
     setIsMenuOpen(!isMenuOpen); // toggles the menu visibility status
   };
@@ -62,6 +70,7 @@ const Header = () => {
             }}
           >
             <NavigationMenu
+              links={links}
               direction={'row'}
               justifyContent={'flex-end'}
               alignItems={'center'}
@@ -80,6 +89,7 @@ const Header = () => {
                 onClick={toggleNavbar}
               />
               <NavigationMenu
+                links={links}
                 direction={'column'}
                 justifyContent={'center'}
                 alignItems={'center'}
